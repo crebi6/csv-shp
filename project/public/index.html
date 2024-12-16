@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Format Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>File Format Converter</h1>
+        
+        <div class="converter-section">
+            <h2>CSV to Shapefile</h2>
+            <form id="csvForm" class="upload-form">
+                <div class="file-input">
+                    <div class="drop-zone" id="csvDropZone">
+                        <i class="fas fa-cloud-upload-alt icon"></i>
+                        <p>Drag and drop your CSV file here or click to browse</p>
+                        <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
+                    </div>
+                </div>
+                <div class="loading" id="csvLoading">
+                    <div class="loading-spinner"></div>
+                    <p>Converting file...</p>
+                </div>
+                <button type="submit">Convert to Shapefile</button>
+            </form>
+            <div id="csvResult" class="result"></div>
+        </div>
+
+        <div class="converter-section">
+            <h2>Shapefile to CSV</h2>
+            <form id="shapefileForm" class="upload-form">
+                <div class="file-input">
+                    <div class="drop-zone" id="shapefileDropZone">
+                        <i class="fas fa-cloud-upload-alt icon"></i>
+                        <p>Drag and drop your Shapefile components here or click to browse</p>
+                        <input type="file" name="shapefiles" accept=".shp,.shx,.dbf" multiple required>
+                    </div>
+                </div>
+                <div class="loading" id="shapefileLoading">
+                    <div class="loading-spinner"></div>
+                    <p>Converting file...</p>
+                </div>
+                <button type="submit">Convert to CSV</button>
+            </form>
+            <div id="shapefileResult" class="result"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
